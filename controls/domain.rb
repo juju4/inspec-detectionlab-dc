@@ -15,7 +15,7 @@ if domain_enabled
     title 'Windows Features'
     desc 'Ensure domain Windows Features are present'
     describe windows_feature('AD-Domain-Services') do
-      it{ should be_installed }
+      it { should be_installed }
     end
   end
 end
