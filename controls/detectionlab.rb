@@ -23,7 +23,7 @@ if detectionlab_setup
     describe file('C:\windows\system32\drivers\etc\hosts') do
       it { should be_file }
     end
-    describe file('c:\Tools\Mimikatz\README.md') do
+    describe file('c:\Tools\Mimikatz\mimikatz-master\README.md') do
       it { should be_file }
     end
     describe file('c:\Tools\Atomic Red Team\atomic-red-team-master\README.md') do
