@@ -22,7 +22,7 @@ if osquery_enabled
       it { should be_file }
     end
     osquerypacks_check.each do |str|
-      describe file("C:\Program Files\osquery\packs\#{str}") do
+      describe file("C:\\Program Files\\osquery\\packs\\#{str}") do
         it { should be_file }
       end
     end
