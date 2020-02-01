@@ -37,7 +37,7 @@ if detectionlab_setup
     title 'AutoLogon'
     desc 'AutoLogon is configured'
     describe registry_key('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon') do
-      its('AutoAdminLogon') { should eq 1 }
+      its('AutoAdminLogon') { should eq '1' }
       its('DefaultUserName') { should eq 'vagrant' }
     end
   end
