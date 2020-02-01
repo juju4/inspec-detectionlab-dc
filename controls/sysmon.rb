@@ -14,7 +14,7 @@ if sysmon_enabled
   control 'sysmon-02' do
     title 'Sysmon service'
     desc 'Sysmon service is configured and running'
-    describe service('sysmon') do
+    describe service('sysmon64') do
       it { should be_installed }
       it { should be_running }
     end
