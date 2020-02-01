@@ -36,7 +36,7 @@ if detectionlab_setup
   control 'detectionlab-02' do
     title 'AutoLogon'
     desc 'AutoLogon is configured'
-    describe registry_key('HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon') do
+    describe registry_key('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon') do
       its('AutoAdminLogon') { should eq 1 }
       its('DefaultUserName') { should eq 'vagrant' }
     end
@@ -44,7 +44,7 @@ if detectionlab_setup
   control 'detectionlab-03' do
     title 'IPv6'
     desc 'IPv6 is disabled'
-    describe registry_key('HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters') do
+    describe registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters') do
       its('DisabledComponents') { should eq 255 }
     end
   end
