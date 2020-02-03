@@ -5,6 +5,8 @@ detectionlab_setup = input('detectionlab_setup', value: true, description: 'Chec
 if detectionlab_setup
   title 'DetectionLab files & configuration'
   control 'detectionlab-01' do
+    title 'DetectionLab files check'
+    desc 'Ensure DetectionLab files are present'
     describe file('C:\DetectionLab') do
       it { should be_directory }
     end

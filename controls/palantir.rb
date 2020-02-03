@@ -5,6 +5,8 @@ palantir_files = input('palantir_files', value: true, description: 'Check Palant
 if palantir_files
   title 'Palantir files & configuration'
   control 'palantir-01' do
+    title 'Palantir windows-event-forwarding files check'
+    desc 'Ensure Palantir windows-event-forwarding files are present'
     describe file('c:\Program Files\windows-event-forwarding') do
       it { should be_directory }
     end
