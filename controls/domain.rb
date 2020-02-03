@@ -19,6 +19,26 @@ if domain_enabled
       it { should be_installed }
     end
   end
+  control 'domain-03' do
+    title 'DC services'
+    desc 'DC services are configured and running'
+    describe service('adws') do
+      it { should be_installed }
+      it { should be_running }
+    end
+    describe service('dns') do
+      it { should be_installed }
+      it { should be_running }
+    end
+    describe service('kdc') do
+      it { should be_installed }
+      it { should be_running }
+    end
+    describe service('netlogon') do
+      it { should be_installed }
+      it { should be_running }
+    end
+  end
 end
 
 if domain2_enabled
