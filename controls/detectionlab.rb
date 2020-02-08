@@ -2,13 +2,14 @@
 
 detectionlab_setup = input('detectionlab_setup', value: true, description: 'Check Detectionlab files and registries are present')
 detectionlab_autologon_user = input('detectionlab_autologon_user', value: 'vagrant', description: 'Check AutoLogon set to given user')
+detectionlab_vagrantroot = input('detectionlab_vagrantroot', value: 'C:\DetectionLab\vagrant', description: 'Check Detectionlab files vagrant root dir - C:\vagrant if inside Vagrant')
 
 if detectionlab_setup
   title 'DetectionLab files & configuration'
   control 'detectionlab-01' do
     title 'DetectionLab files check'
     desc 'Ensure DetectionLab files are present'
-    describe file('C:\DetectionLab') do
+    describe file(detectionlab_vagrantroot) do
       it { should be_directory }
     end
     describe file('C:\Program Files\Classic Shell\ClassicStartMenu.exe') do
