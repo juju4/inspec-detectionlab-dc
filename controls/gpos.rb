@@ -24,7 +24,7 @@ if gpos_check_enabled
     desc 'Ensure expected GPOs are present'
     describe command('Get-GPO -All') do
       gpos_list.each do |str|
-        its('stdout') { should eq "/#{str}/" }
+        its('stdout') { should match str }
       end
     end
   end
