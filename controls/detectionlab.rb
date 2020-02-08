@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 detectionlab_setup = input('detectionlab_setup', value: true, description: 'Check Detectionlab files and registries are present')
+detectionlab_autologon_user = input('detectionlab_autologon_user', value: 'vagrant', description: 'Check AutoLogon set to given user')
 
 if detectionlab_setup
   title 'DetectionLab files & configuration'
@@ -40,7 +41,7 @@ if detectionlab_setup
     desc 'AutoLogon is configured'
     describe registry_key('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon') do
       its('AutoAdminLogon') { should eq '1' }
-      its('DefaultUserName') { should eq 'vagrant' }
+      its('DefaultUserName') { should eq detectionlab_autologon_user }
     end
   end
   control 'detectionlab-03' do
